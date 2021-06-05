@@ -16,6 +16,7 @@ export default function Home(props) {
     Papa.parse(process.env.PUBLIC_URL+'/data/symbols.csv', {
       header: true,
       download: true,
+      dynamicTyping: true,
       complete: function(results) {
         const newArray = results.data.map(row =>{
           return {
