@@ -19,6 +19,7 @@ export default function Compare(props){
       download: true,
       dynamicTyping: true,
       complete: function(results) {
+        console.log(results)
         const newArray = results.data.map(row =>{
           return {
             symbol: row.Symbol,
