@@ -3,7 +3,7 @@ import Papa from 'papaparse';
 import axios from 'axios';
 import classes from './home.module.css';
 import Chart from '../../components/chart/chart'
-import SymbolsFile from '../../data/symbols.csv'
+import SymbolsFile from '../../data/symbols.json'
 import SelectInput from '../../components/uiComponents/select/select'
 
 
@@ -13,20 +13,27 @@ export default function Home(props) {
 
   useEffect(() =>{
     // to initialize the stock list
-    Papa.parse(process.env.PUBLIC_URL+'/data/symbols.csv', {
-      header: true,
-      download: true,
-      dynamicTyping: true,
-      complete: function(results) {
-        const newArray = results.data.map(row =>{
-          return {
-            symbol: row.Symbol,
-            name: row.Name?row.Name.slice(0,15):null
-          }
-        })
-        setStocks(newArray);
+    const newSotcks = SymbolsFile.map(el =>{
+      return{
+        symbol: el["ACT Symbol"],
+        name: el["Company Name"].slice(0,15)
       }
-    });
+    })
+    setStocks(newSotcks);
+    // Papa.parse(process.env.PUBLIC_URL+'/data/symbols.csv', {
+    //   header: true,
+    //   download: true,
+    //   dynamicTyping: true,
+    //   complete: function(results) {
+    //     const newArray = results.data.map(row =>{
+    //       return {
+    //         symbol: row.Symbol,
+    //         name: row.Name?row.Name.slice(0,15):null
+    //       }
+    //     })
+    //     setStocks(newArray);
+    //   }
+    // });
   },[])
 
   const handleChange =async (event) =>{

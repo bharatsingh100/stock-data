@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
 import axios from 'axios';
 import classes from './compare.module.css'
-import SymbolsFile from '../../data/symbols.csv'
+import SymbolsFile from '../../data/symbols.json'
 import SelectInput from '../../components/uiComponents/select/select'
 import CompareTable from '../../components/compareTable/compareTable'
 
@@ -14,21 +14,28 @@ export default function Compare(props){
 
   useEffect(() =>{
     // to initialize the stock list
-    Papa.parse(process.env.PUBLIC_URL+'/data/symbols.csv', {
-      header: true,
-      download: true,
-      dynamicTyping: true,
-      complete: function(results) {
-        console.log(results)
-        const newArray = results.data.map(row =>{
-          return {
-            symbol: row.Symbol,
-            name: row.Name?row.Name.slice(0,15):null
-          }
-        })
-        setStocks(newArray);
+    const newSotcks = SymbolsFile.map(el =>{
+      return{
+        symbol: el["ACT Symbol"],
+        name: el["Company Name"].slice(0,15)
       }
-    });
+    })
+    setStocks(newSotcks);
+    // Papa.parse(process.env.PUBLIC_URL+'/data/symbols.csv', {
+    //   header: true,
+    //   download: true,
+    //   dynamicTyping: true,
+    //   complete: function(results) {
+    //     console.log(results)
+    //     const newArray = results.data.map(row =>{
+    //       return {
+    //         symbol: row.Symbol,
+    //         name: row.Name?row.Name.slice(0,15):null
+    //       }
+    //     })
+    //     setStocks(newArray);
+    //   }
+    // });
   },[])
 
 
