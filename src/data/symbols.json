@@ -7,10 +7,7 @@
     "ACT Symbol": "AA",
     "Company Name": "Alcoa Inc. Common Stock"
   },
-  {
-    "ACT Symbol": "AA$B",
-    "Company Name": "Alcoa Inc. Depository Shares Representing 1/10th Preferred Convertilble Class B Series 1"
-  },
+  
   {
     "ACT Symbol": "AAC",
     "Company Name": "AAC Holdings, Inc. Common Stock"
@@ -62,18 +59,6 @@
   {
     "ACT Symbol": "ABR",
     "Company Name": "Arbor Realty Trust Common Stock"
-  },
-  {
-    "ACT Symbol": "ABR$A",
-    "Company Name": "Arbor Realty Trust Preferred Series A"
-  },
-  {
-    "ACT Symbol": "ABR$B",
-    "Company Name": "Arbor Realty Trust Cumulative Redeemable Preferred Series B"
-  },
-  {
-    "ACT Symbol": "ABR$C",
-    "Company Name": "Arbor Realty Trust Cumulative Redeemable Preferred Series C"
   },
   {
     "ACT Symbol": "ABRN",
