@@ -1,0 +1,24 @@
+.main{
+  width: 95vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.select{
+  width: 20vw;
+  height: 100px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-self: center;
+}
+
+.chart{
+  width: 40vw;
+  height: 100%;
+  align-self: center;
+  margin-top: 50px;
+}
