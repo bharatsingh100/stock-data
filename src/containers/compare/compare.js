@@ -14,7 +14,7 @@ export default function Compare(props){
 
   useEffect(() =>{
     // to initialize the stock list
-    Papa.parse(SymbolsFile, {
+    Papa.parse('../../data/symbols.csv', {
       header: true,
       download: true,
       complete: function(results) {

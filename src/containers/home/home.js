@@ -7,14 +7,13 @@ import SymbolsFile from '../../data/symbols.csv'
 import SelectInput from '../../components/uiComponents/select/select'
 
 
-
 export default function Home(props) {
   const [stocks,setStocks] = useState([]);
   const [selected,setSelected] = useState({flag: false});
 
   useEffect(() =>{
     // to initialize the stock list
-    Papa.parse(SymbolsFile, {
+    Papa.parse('../../data/symbols.csv', {
       header: true,
       download: true,
       complete: function(results) {
